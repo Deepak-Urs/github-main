@@ -53,6 +53,18 @@ class Queue:
             self.items[start] = None
             return firstElement
 
+    def peek(self):
+        if self.isEmpty():
+            return "There is no element in the Q"
+        else:
+            return self.items[self.start]
+
+    def delete(self):
+        self.items = self.maxSize * [None]
+        self.top = -1
+        self.start = -1
+
+
 
 customQ = Queue(3)
 print(customQ.isFull())
@@ -65,4 +77,9 @@ print(customQ)
 print(customQ.isFull())
 
 print(customQ.dequeue())
+print(customQ)
+
+print(customQ.peek())
+
+customQ.delete()
 print(customQ)
