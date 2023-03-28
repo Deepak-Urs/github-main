@@ -1,6 +1,7 @@
 <template>
   <div class="container">
     <Header title="Task Tracker"></Header>
+    <Tasks @toggle-reminder="toggleReminder" @delete-task="deleteTask" :tasks="tasks"></Tasks>
   </div>
   
   <!--<img alt="Vue logo" src="./assets/logo.png">
@@ -8,13 +9,51 @@
 </template>
 
 <script>
-//import HelloWorld from './components/HelloWorld.vue'
+import Tasks from './components/Tasks.vue'
 import Header from './components/Header.vue'
 
 export default {
   name: "App",
   components: {
-    Header
+    Header,
+    Tasks
+  },
+  data() {
+    return {
+      tasks: []
+    }
+  },
+  methods: {
+    deleteTask(id) {
+      if(confirm('Are you sure?')) {
+        this.tasks = this.tasks.filter((task) => task.id !== id)
+      }
+    },
+    toggleReminder(id) {
+      this.tasks = this.tasks.map((task) => task.id === id ? { ...task, reminder: !task.reminder} : task)
+    }
+  },
+  created() {
+    this.tasks = [
+      {
+        id: 1,
+        text: 'Doctor appointement',
+        day: 'March 1st at 2:30pm',
+        reminder: true
+      },
+      {
+        id: 2,
+        text: 'Meeting at school',
+        day: 'March 2nd at 2:30pm',
+        reminder: true
+      },
+      {
+        id: 3,
+        text: 'Food Shopping',
+        day: 'March 3rd at 2:30pm',
+        reminder: false
+      },
+    ]
   }
 };
 </script>
