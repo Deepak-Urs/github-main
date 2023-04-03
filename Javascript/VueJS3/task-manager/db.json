@@ -19,10 +19,10 @@
       "reminder": false
     },
     {
-      "id": 88389,
+      "id": 88981,
       "text": "t1",
       "day": "t1",
-      "reminder": false
+      "reminder": true
     }
   ]
 }
