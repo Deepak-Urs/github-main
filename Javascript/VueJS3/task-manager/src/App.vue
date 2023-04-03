@@ -1,9 +1,10 @@
 <template>
   <div class="container">
-    <Header 
-      @btn-click="toggleAddTaskBtn" 
+    <Header
+      @btn-click="toggleAddTaskBtn"
       title="Task Tracker"
-      :showAddTask="showAddTask">
+      :showAddTask="showAddTask"
+    >
     </Header>
     <div class="add-task" v-if="showAddTask">
       <AddTask @add-task="addTask" />
@@ -39,19 +40,25 @@ export default {
   },
   methods: {
     async addTask(task) {
-      const res = await fetch('http://localhost:5000/tasks', {
-        method: 'POST',
+      const res = await fetch("http://localhost:5000/tasks", {
+        method: "POST",
         headers: {
-          'Content-type': 'application/json',
+          "Content-type": "application/json",
         },
-        body: JSON.stringify(task)
-      })
-      const data = await res.json()
+        body: JSON.stringify(task),
+      });
+      const data = await res.json();
       this.tasks = [...this.tasks, data];
     },
-    deleteTask(id) {
+    async deleteTask(id) {
       if (confirm("Are you sure?")) {
-        this.tasks = this.tasks.filter((task) => task.id !== id);
+        const res = await fetch(`http://localhost:5000/tasks/${id}`, {
+          method: "DELETE",
+        });
+
+        res.status === 200
+          ? (this.tasks = this.tasks.filter((task) => task.id !== id))
+          : alert("Error in deleting task");
       }
     },
     toggleReminder(id) {
@@ -64,20 +71,20 @@ export default {
       this.showAddTask = !this.showAddTask;
     },
     async fetchTasks() {
-      const res = await fetch('http://localhost:5000/tasks')
-      
-      const data = await res.json()
-      return data
+      const res = await fetch("http://localhost:5000/tasks");
+
+      const data = await res.json();
+      return data;
     },
     async fetchTask(id) {
-      const res = await fetch(`http://localhost:5000/tasks/${id}`)
-      
-      const data = await res.json()
-      return data
-    }
+      const res = await fetch(`http://localhost:5000/tasks/${id}`);
+
+      const data = await res.json();
+      return data;
+    },
   },
   async created() {
-    this.tasks = await this.fetchTasks()
+    this.tasks = await this.fetchTasks();
   },
 };
 </script>
