@@ -14,6 +14,9 @@
       @delete-task="deleteTask"
       :tasks="tasks"
     ></Tasks>
+
+    <router-view></router-view>
+    <Footer></Footer>
   </div>
 
   <!--<img alt="Vue logo" src="./assets/logo.png">
@@ -21,9 +24,11 @@
 </template>
 
 <script>
-import Tasks from "./components/Tasks.vue";
-import Header from "./components/Header.vue";
-import AddTask from "./components/AddTask.vue";
+import Tasks from "./components/Tasks";
+import Header from "./components/Header";
+import Footer from "./components/Footer";
+import AddTask from "./components/AddTask";
+
 
 export default {
   name: "App",
@@ -31,6 +36,7 @@ export default {
     Header,
     Tasks,
     AddTask,
+    Footer
   },
   data() {
     return {
