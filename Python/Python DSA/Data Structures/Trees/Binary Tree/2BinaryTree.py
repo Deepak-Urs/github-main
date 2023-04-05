@@ -42,6 +42,25 @@ def levelOrderTraversal(rootNode):
                 customQ.enqueue(root.value.leftChild)
             if root.value.rightChild is not None:
                 customQ.enqueue(root.value.rightChild)
+
+# Searching using LevelOrder is best because Queues perform better than Stacks
+def searchBT(rootNode, nodeValue):
+    if not rootNode:
+        return "BT does not exist"
+    else:
+        customQ = Queue.Queue()
+        customQ.enqueue(rootNode)
+
+        while not customQ.isEmpty():
+            root = customQ.dequeue()
+            if root.value.data == nodeValue:
+                return "Success"
+            if root.value.leftChild is not None:
+                customQ.enqueue(root.value.leftChild)
+            if root.value.rightChild is not None:
+                customQ.enqueue(root.value.rightChild)
+        
+        return "Not Found"
             
 
 
@@ -75,4 +94,8 @@ print("\n")
 
 print("levelOrderTraversal --")
 levelOrderTraversal(newBT)
+print("\n")
+
+print("searchBT --")
+print(searchBT(newBT, "Tea"))
 print("\n")
