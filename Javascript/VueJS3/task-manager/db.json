@@ -4,7 +4,7 @@
       "id": 1,
       "text": "Doctor appointement",
       "day": "March 1st at 2:30pm",
-      "reminder": true
+      "reminder": false
     },
     {
       "id": 2,
@@ -13,7 +13,7 @@
       "reminder": false
     },
     {
-      "id": 88981,
+      "id": 3181,
       "text": "t1",
       "day": "t1",
       "reminder": true
