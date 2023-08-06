@@ -1,4 +1,5 @@
 import React, { useEffect } from 'react'
+import Board from './components/Board';
 import { useAppDispatch, useAppSelector } from './store/hooks'
 //import { updateBoard } from "./store"
 import { createBoard } from './utils/createBoard';
@@ -15,11 +16,11 @@ function App() {
   useEffect(()=> {
     //dispatch(updateBoard(createBoard(boardSize)))
     console.log(createBoard(boardSize));
-  }, []);
+  }, [boardSize, dispatch]);
   
   return (
-    <div>
-      App
+    <div className='flex items-center justify-center h-screen'>
+      <Board />
     </div>
   )
 }
