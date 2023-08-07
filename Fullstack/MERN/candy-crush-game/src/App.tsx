@@ -12,14 +12,15 @@ function App() {
   const boardSize = useAppSelector(
     ({candyCrush: {boardSize}}) => boardSize
   );
-
+  console.log('board seen', board);
+  
   useEffect(()=> {
     //dispatch(updateBoard(createBoard(boardSize)))
     console.log(createBoard(boardSize));
   }, [boardSize, dispatch]);
   
   return (
-    <div className='flex items-center justify-center h-screen'>
+    <div className='flex item-center justify-center h-screen'>
       <Board />
     </div>
   )
