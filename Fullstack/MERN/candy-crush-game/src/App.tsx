@@ -3,6 +3,7 @@ import Board from './components/Board';
 import { useAppDispatch, useAppSelector } from './store/hooks'
 //import { updateBoard } from "./store"
 import { createBoard } from './utils/createBoard';
+import { isColumnOfFour } from './utils/formulas';
 
 function App() {
 
@@ -18,6 +19,15 @@ function App() {
     //dispatch(updateBoard(createBoard(boardSize)))
     console.log(createBoard(boardSize));
   }, [boardSize, dispatch]);
+
+  useEffect(() => {
+    const timeout = setTimeout(() => {
+      const newBoard = [...board];
+      isColumnOfFour(newBoard, boardSize, formulaForColumnOfFour(boardSize))
+      dispatch(updateBoard(newBoard))
+    }, 150);
+    return () => clearInterval(timeout)
+  }, [board, boardSize, dispatch])
   
   return (
     <div className='flex item-center justify-center h-screen'>
