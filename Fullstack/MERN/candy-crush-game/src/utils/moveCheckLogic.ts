@@ -37,3 +37,12 @@ export const isColumnOfFour = (
         }
     }
 }
+
+export const checkForRowOfFour = (
+    newBoard: string[],
+    boardSize: number,
+    invalidMoves: number[]
+) => {
+    console.log('tbc');
+    
+}
