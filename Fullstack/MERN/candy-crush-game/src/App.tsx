@@ -3,8 +3,8 @@ import Board from './components/Board';
 import { useAppDispatch, useAppSelector } from './store/hooks'
 //import { updateBoard } from "./store"
 import { createBoard } from './utils/createBoard';
-import { formulaForColumnOfFour, formulaForColumnOfThree } from './utils/formulas';
-import { isColumnOfFour, isColumnOfThree } from './utils/moveCheckLogic';
+import { formulaForColumnOfFour, formulaForColumnOfThree, generateInvalidMoves } from './utils/formulas';
+import { checkForRowOfFour, checkForRowOfThree, isColumnOfFour, isColumnOfThree } from './utils/moveCheckLogic';
 
 function App() {
 
@@ -26,7 +26,8 @@ function App() {
       const newBoard = [...board];
       isColumnOfFour(newBoard, boardSize, formulaForColumnOfFour(boardSize));
       isColumnOfThree(newBoard, boardSize, formulaForColumnOfThree(boardSize))
-      
+      checkForRowOfFour(newBoard, boardSize, generateInvalidMoves(boardSize, true))
+      checkForRowOfThree(newBoard, boardSize, generateInvalidMoves(boardSize))
       dispatch(updateBoard(newBoard))
     }, 150);
     return () => clearInterval(timeout)

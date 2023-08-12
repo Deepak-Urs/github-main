@@ -43,6 +43,37 @@ export const checkForRowOfFour = (
     boardSize: number,
     invalidMoves: number[]
 ) => {
-    console.log('tbc');
+    for(let i:number=0; i < boardSize*boardSize; i++) {
+        const rowOfFour = [i,i+1,i+2,i+3]
+        const decidedColor: string = newBoard[i]
+
+        const isBlank: boolean = newBoard[i] === "";
+
+        if (rowOfFour.every((candy: number) => newBoard[candy] === decidedColor && !isBlank)) {
+            rowOfFour.forEach((candy: number) => (newBoard[candy] = ""));
+            return true
+        }
+
+    }
+    
+}
+
+export const checkForRowOfThree = (
+    newBoard: string[],
+    boardSize: number,
+    invalidMoves: number[]
+) => {
+    for(let i:number=0; i < boardSize*boardSize; i++) {
+        const rowOfThree = [i,i+1,i+2]
+        const decidedColor: string = newBoard[i]
+
+        const isBlank: boolean = newBoard[i] === "";
+
+        if (rowOfThree.every((candy: number) => newBoard[candy] === decidedColor && !isBlank)) {
+            rowOfThree.forEach((candy: number) => (newBoard[candy] = ""));
+            return true
+        }
+
+    }
     
 }
