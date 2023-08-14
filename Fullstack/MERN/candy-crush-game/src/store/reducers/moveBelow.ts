@@ -1,4 +1,5 @@
 import { WritableDraft } from "immer/dist/internal";
+import { formulaForMoveBelow } from "../../utils/formulas";
 
 export const moveBelowReducer = (
     state: WritableDraft<{
@@ -12,5 +13,9 @@ export const moveBelowReducer = (
     const { boardSize } = state;
 
     let boardChanges: boolean = false;
-    //const formau
+    const formulaForMove: number = formulaForMoveBelow(boardSize);
+    for (let i=0; i< formulaForMove; i++) {
+        const firstROw = Array(boardSize).fill(0).map((_value, index: number) => index)
+    }
+    const isFirstRow = Array(boardSize).fill(0).map((_value: number, index: number) => index);
 }
