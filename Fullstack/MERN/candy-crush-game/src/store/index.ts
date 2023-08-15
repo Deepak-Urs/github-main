@@ -15,6 +15,7 @@ const candyCrushSlice = createSlice({
         updateBoard: (state, action: PayloadAction<string[]>) => {
             state.board = action.payload;
         },
+        moveBelow: moverBelowReducer
     },
 });
 
