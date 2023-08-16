@@ -25,7 +25,7 @@ export const store = configureStore({
     }
 })
 
-export const {} = candyCrushSlice.actions
+export const {updateBoard, moveBelow } = candyCrushSlice.actions
 
 export type RootState = ReturnType<typeof store.getState>;
 export type AppDispatch = typeof store.dispatch;

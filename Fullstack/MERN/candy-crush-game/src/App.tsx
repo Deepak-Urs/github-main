@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react'
 import Board from './components/Board';
+import { moveBelow } from './store';
 import { useAppDispatch, useAppSelector } from './store/hooks'
 //import { updateBoard } from "./store"
 import { createBoard } from './utils/createBoard';
@@ -29,6 +30,7 @@ function App() {
       checkForRowOfFour(newBoard, boardSize, generateInvalidMoves(boardSize, true))
       checkForRowOfThree(newBoard, boardSize, generateInvalidMoves(boardSize))
       dispatch(updateBoard(newBoard))
+      dispatch(moveBelow())
     }, 150);
     return () => clearInterval(timeout)
   }, [board, boardSize, dispatch])
