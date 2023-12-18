@@ -1,0 +1,16 @@
+x = str('a')
+x = int(20)
+x = float(20.5)
+x = complex(1j)
+
+x = list((1,2,3))
+x = tuple((1,2,3))
+x = set((1,2,3))
+x = frozenset((1,2,3))
+x = dict(a='a', b='b')
+x = range(6)
+
+x = bool(1)
+x = bytes(5)
+x = bytearray(5)
+x = memoryview(bytes(5))
