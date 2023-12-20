@@ -1,0 +1,7 @@
+Important Topics covered:
+
+1. Arrays and Strings [operations]
+2. For Loops [control structure, range(), nested loops]
+3. While Loops
+4. Functions [Parameters and Arguments(Arbitrary Args, Arbitrary Keyword Args(kwargs)), pass, recursion]
+5. Time and Space Complexities[TC-rules,notation; SC-note]
