@@ -1,3 +1,4 @@
+#https://leetcode.com/problems/move-zeroes/
 def moveAllZerosToEndOfArray(nums):
     l  = 0
     for r in range(len(nums)):
