@@ -55,10 +55,6 @@ class DoublyLinkedList:
                     return None
                 else:
                     return "Deletion Success"
-
-
-
-                    currNode = currNode.next
     
     #  Insertion Method in Doubly Linked List
     def insertNode(self, nodeValue, location):

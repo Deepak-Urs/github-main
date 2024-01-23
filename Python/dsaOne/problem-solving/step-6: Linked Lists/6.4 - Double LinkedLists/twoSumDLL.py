@@ -33,7 +33,6 @@ class DoublyLinkedList:
             return None
             
         hm = []
-        res = []
 
         curr = self.head
         while curr:
