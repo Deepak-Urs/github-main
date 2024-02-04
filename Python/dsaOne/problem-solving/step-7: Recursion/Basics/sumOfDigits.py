@@ -3,7 +3,7 @@ def sumOfDigits(num):
     if num == 0:
         return 0
     else:
-        return int(num%10) + int(num//10)
+        return int(num%10) + sumOfDigits(int(num//10))
     
 print(sumOfDigits(12))
 print(sumOfDigits(-12))
