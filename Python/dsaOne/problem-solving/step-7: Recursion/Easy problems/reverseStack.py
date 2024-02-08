@@ -1,12 +1,12 @@
 def reverse(stk):
     if len(stk) == 1:
-        return
+        return stk
 
     t = stk.pop()
     reverse(stk)
 
     insert(stk,t)
-    
+
     return stk
 
 def insert(stk, t):
