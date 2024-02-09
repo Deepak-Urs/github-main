@@ -1,4 +1,4 @@
-def subsets(ip, op, res):
+def subsets(ip, op):
     if len(ip) == 0:
         op = " "
         return
@@ -7,27 +7,27 @@ def subsets(ip, op, res):
     op2 = op
     op2 += ip[0]
 
-    if op1 not in res:
-        res.append(op1)
+    #if op1 not in res:
+    #    res.append(op1)
 
-    if op2 not in res:
-        res.append(op2)
+    #if op2 not in res:
+    #    res.append(op2)
 
-    #print(op1)
-    #print(op2)
+    print(op1)
+    print(op2)
 
     ip = ip[1:]
 
-    subsets(ip, op1, res)
-    subsets(ip, op2, res)
+    subsets(ip, op1)
+    subsets(ip, op2)
     
-    return res
+    #return res
 
 def main():
     ip = input("Enter input string:")
     op = " "
-    res = []
-    print(subsets(ip, op, res))
+    #res = []
+    print(subsets(ip, op))
 
 main()
 
