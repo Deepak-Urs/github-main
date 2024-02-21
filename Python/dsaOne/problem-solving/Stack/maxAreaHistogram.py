@@ -54,8 +54,8 @@ def maxAreaHistogram(arr):
     for i in range(len(arr)):
         area.append(arr[i]*width[i])
     
-    return area
+    return max(area)
 
 
-print(maxAreaHistogram([6,2,5,4,5,1,6]))
+#print(maxAreaHistogram([6,2,5,4,5,1,6]))
 
