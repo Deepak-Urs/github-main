@@ -6,7 +6,7 @@ n = len(Wt)
 t = [[0 if ix ==0 or jx ==0 else None for jx in range(W+1)] for ix in range(n+1)]
 #prints(t)
 
-def ZOKpTopDown(Wt, Vl, W, n):
+def ZOKpTabulation(Wt, Vl, W, n):
     for i in range(1,n+1):
         for j in range(1, W+1):
             if Wt[i-1] <= j:
@@ -19,5 +19,5 @@ def ZOKpTopDown(Wt, Vl, W, n):
     
     
 
-print(ZOKpTopDown(Wt, Vl, W, n))
+print(ZOKpTabulation(Wt, Vl, W, n))
 
