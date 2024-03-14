@@ -46,7 +46,6 @@ def postOrderTraversal(rootNode): # O(n)
     print(rootNode.data)
 # post-order: 20, 40,30, 60, 50, 80, 100, 90, 70
 
-
 def levelOrderTraversal(rootNode): # O(n)
     if not rootNode:
         return "Tree is empty!"
@@ -63,6 +62,61 @@ def levelOrderTraversal(rootNode): # O(n)
                 customQ.enqueue(root.value.rightChild)
 
 # level-order: 70, 50, 90, 30, 60, 80, 100, 20, 40
+
+def searchBST(rootNode, nodeVal):
+    if nodeVal == rootNode.data:
+        print("Target value found!")
+    elif nodeVal < rootNode.data:
+        if nodeVal == rootNode.leftChild.data:
+           print("Target value found!")
+        else:
+            searchBST(rootNode.leftChild, nodeVal)
+    elif nodeVal > rootNode.data:
+        if nodeVal == rootNode.rightChild.data:
+           print("Target value found!")
+        else:
+            searchBST(rootNode.rightChild, nodeVal)
+
+
+def minValueNode(bstNode): # O(log N)
+    current = bstNode
+    while current.leftChild is not None:
+        current = current.leftChild
+    return current
+
+
+def deleteNodeBST(rootNode, nodeVal): # O(log N)
+    if not rootNode:
+        return "BST is empty!"
+    elif nodeVal < rootNode.data:
+        rootNode.leftChild = deleteNodeBST(rootNode.leftChild, nodeVal)
+    elif nodeVal > rootNode.data:
+        rootNode.rightChild = deleteNodeBST(rootNode.rightChild, nodeVal)
+    else:
+        if rootNode.leftChild is None:
+            temp = rootNode.leftChild
+            rootNode = None
+            return temp
+
+        if rootNode.rightChild is None:
+            temp = rootNode.rightChild
+            rootNode = None
+            return temp
+        
+        temp = minValueNode(rootNode.rightChild)
+        rootNode.data = temp.data
+        rootNode.rightChild = deleteNodeBST(rootNode.rightChild, nodeVal)
+
+    return rootNode
+
+def deleteBST(rootNode): # O(1)
+    if not rootNode:
+        return "BST is empty!"
+    rootNode.data = None
+    rootNode.leftChild = None
+    rootNode.rightChild = None
+    return "BST is deleted successfully!"
+
 
 
 
@@ -86,6 +140,17 @@ print(insert(newBST, 40))
 #postOrderTraversal(newBST)
 
 #BFS
-levelOrderTraversal(newBST)
+#levelOrderTraversal(newBST)
 
+# Search
+#searchBST(newBST, 60)
+
+# Delete Node
+#deleteNodeBST(newBST, 60)
+#levelOrderTraversal(newBST)
+
+
+# Delete BST
+print(deleteBST(newBST))
+levelOrderTraversal(newBST)
 
