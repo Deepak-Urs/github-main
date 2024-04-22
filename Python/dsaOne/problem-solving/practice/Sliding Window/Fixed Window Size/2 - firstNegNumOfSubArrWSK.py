@@ -5,18 +5,22 @@ def firstNegNumOfSubArrWSK(arr, k):
     while j < size:
         if arr[j] < 0:
             res.append(arr[j])
-        ws = j-i+1
+        w = j-i+1
 
-        if ws < k:
+        if w < k:
             j += 1
-        elif ws == k:
-            if len(res) == 0: res.append(0)
-            else:
+        elif w == k:
+            l = len(res)
+            if l != 0:
                 print(res[0])
-                if arr[i] == res[0]:
-                    res.pop(0)
-                j += 1
-                i += 1
+            else:
+                print(0)
+
+            if l != 0 and arr[i] == res[0]:
+                res.pop(0)
+            i += 1
+            j += 1
+
 
 
 firstNegNumOfSubArrWSK([12,-1,-7,8,-15,30,16,28],3)

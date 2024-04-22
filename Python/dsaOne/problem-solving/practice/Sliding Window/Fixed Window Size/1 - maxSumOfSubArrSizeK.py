@@ -7,17 +7,18 @@ def maxSumOfSubArrSizeK(arr, k):
 
     while j < size:
         sm += arr[j]
-        ws = j-i+1
-
-        if ws < k:
+        w = j-i+1
+        
+        if w < k:
             j += 1
-        elif ws == k:
+        elif w == k:
             res = max(res, sm)
-            sm -= arr[i]
 
-            j += 1
+            sm -= arr[i]
             i += 1
+            j += 1
     
     return res
+
 
 print(maxSumOfSubArrSizeK([2,5,1,8,2,9,1], 3))
