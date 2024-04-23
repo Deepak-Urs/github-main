@@ -23,5 +23,7 @@ def minWIndowSubStr(s ,t):
         j+=1
 
     return ans if ans != float('inf') else 0
+
+                
     
 print(minWIndowSubStr('tomptapta', 'tta'))

@@ -1,26 +1,24 @@
 def pickKuniqueToys(st, k):
-    i, j, size, res = 0, 0, len(st), 0
-    uC, uCount = {}, 0
+    i,j,size,res = 0,0,len(st), 0
+    pC = {}
 
     while j < size:
-        uC[st[j]] = uC.get(st[j], 0) + 1
-        uCount = len(uC)
+        pC[st[j]] = pC.get(st[j], 0) + 1
+        pCount = len(pC)
 
-        if uCount < k:
+        if pCount < k:
             j += 1
-        elif uCount == k:
-            l = j-i+1
-            res = max(l, res)
+        elif pCount == k:
+            ws = j-i+1
+            res = max(ws, res)
             j += 1
-        else:
-            while uCount > k:
-                uC[st[i]] -= 1
+        elif pCount > k:
+            while pCount > k:
+                pC[st[i]] = pC.get(st[i], 0) - 1
 
-                if uC[st[i]] == 0:
-                    del uC[st[i]]
-                
+                if pC[st[i]] == 0: del pC[st[i]]
+                pCount = len(pC)
                 i += 1
-                uCount = len(uC)
             j += 1
     
     return res
