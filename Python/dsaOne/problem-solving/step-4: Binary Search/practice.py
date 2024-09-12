@@ -1,3 +1,147 @@
+# helper fn-1
+def numTimesArrRotated(nums):
+    l = len(nums)
+    st = 0
+    en = l - 1
+    
+    while st <= en:
+        m = st + (en-st)//2
+        
+        prev = (m+l-1)%l
+        nxt = (m+1)%l
+        
+        if nums[m] <= nums[prev] and nums[m] <= nums[nxt]:
+            return m
+        elif nums[m] >= nums[en]:
+            st = m + 1
+        else:
+            en = m - 1
+    
+    return -1
+    
+# helper fn-2
+# def binSrch(nums, t, st, en):
+#     while st <= en:
+#         m = st + (en-st)//2
+        
+#         if t == nums[m]:
+#             return m
+#         elif t < nums[m]:
+#             en = m - 1
+#         else:
+#             st = m + 1
+    
+#     return -1
+            
+# #  to be fixed
+# def findEleInRotArr(nums, t):
+#     minValIdx = numTimesArrRotated(nums)
+#     print('minValIdx=', minValIdx)
+#     l = nums
+#     r1 = -1
+#     r2 = -1
+    
+#     if minValIdx == 0:
+#         st = 0
+#         en = l - 1
+#         res = binSrch(nums, t, st, en)
+#         return res
+#     else:
+#         # if t >= nums[0] and t <= nums[minValIdx-1]:
+#         r1 = binSrch(nums, t, 0, minValIdx-1)
+#         print('r1=', r1)
+#         if r1 == -1:
+            
+#         # elif t >= nums[minValIdx-1] and t <= nums[l-1]:
+#             r2 = binSrch(nums, t, minValIdx, l-1)
+    
+#     if r1 == -1 and r2 == -1:
+#         return -1
+#     elif r1 == -1:
+#         return r2
+#     else:
+#         return r1
+        
+    
+# print(findEleInRotArr([11,12,15,18,2,5,6,8], 15))
+# print(findEleInRotArr([11,12,15,18,2,5,6,8], 35))
+# # print(findEleInRotArr([2,5,6,8,11,12,15,18], 12))
+            
+
+# # def numTimesArrRotated(nums):
+# #     l = len(nums)
+# #     st = 0
+# #     en = l - 1
+    
+# #     while st <= en:
+# #         m = st + (en-st)//2
+        
+# #         prev = (m+l-1)%l
+# #         nxt = (m+1)%l
+        
+# #         if nums[m] <= nums[prev] and nums[m] <= nums[nxt]:
+# #             return m
+# #         elif nums[m] >= nums[en]:
+# #             st = m + 1
+# #         else:
+# #             en = m - 1
+    
+# #     return -1
+    
+# # print(numTimesArrRotated([11,12,15,18,2,5,6,8]))
+# # print(numTimesArrRotated([2,5,6,8,11,12,15,18]))
+
+
+
+# # def firstOcc(nums, t, n):
+# #     st = 0
+# #     en = n
+# #     res = -1
+    
+# #     while st <= en:
+# #         m = st + (en-st)//2
+        
+# #         if t == nums[m]:
+# #             res = m
+# #             en = m - 1
+# #         elif t < nums[m]:
+# #             en = m - 1
+# #         else:
+# #             st = m + 1
+    
+# #     return res
+
+# # def lastOcc(nums, t, n):
+# #     st = 0
+# #     en = n
+# #     res = -1
+    
+# #     while st <= en:
+# #         m = st + (en-st)//2
+        
+# #         if t == nums[m]:
+# #             res = m
+# #             st = m + 1
+# #         elif t < nums[m]:
+# #             en = m - 1
+# #         else:
+# #             st = m + 1
+    
+# #     return res
+
+# # def countEle(nums, t):
+# #     n = len(nums)-1
+# #     si = firstOcc(nums, t, n)
+# #     li = lastOcc(nums, t, n)
+    
+# #     return li-si+1 if li != -1 and si != -1 else -1
+    
+
+# # print(countEle([2,4,10,10,10,18,20], 10))
+# # print(countEle([2,4,10,10,10,18,20], 4))
+# # print(countEle([2,4,10,10,10,18,20], 14))
+
+
 # def firstOcc(nums, t, n):
 #     st = 0
 #     en = n - 1

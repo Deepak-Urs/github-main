@@ -42,4 +42,4 @@ def findElementInRotatedArray(arr, t):
             return r2
         
     
-print(findElementInSortedArray([11,12,15,18,2,6,8,10], 15))
+print(findElementInRotatedArray([11,12,15,18,2,6,8,10], 15))
