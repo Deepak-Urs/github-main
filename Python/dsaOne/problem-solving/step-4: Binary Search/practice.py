@@ -1,3 +1,100 @@
+#def findNextAlphabet(letters, t):
+#    st = 0
+#    en = len(letters)-1
+#    res = -1
+    
+#    while st <= en:
+#        m = st + (en-st)//2
+        
+#        if t == letters[m]:
+#            st = m + 1
+#        elif t < letters[m]:
+#            res = m
+#            en = m -1
+#        else:
+#            st = m + 1
+    
+#    return letters[res] if res != -1 else -1
+
+#print(findNextAlphabet(['a', 'b', 'f', 'h', 'i', 'm'], 'f'))
+#print(findNextAlphabet(['a', 'b', 'f', 'h', 'i', 'm'], 'i'))
+#print(findNextAlphabet(['a', 'b', 'f', 'h', 'i', 'm'], 'm'))
+#print(findNextAlphabet(['a', 'b', 'f', 'h', 'i', 'm'], 'q'))
+
+
+## def ceilValue(nums, t):
+##     st = 0
+##     en = len(nums)-1
+##     res = -1
+    
+##     while st <= en:
+##         m = st + (en-st)//2
+        
+##         if t == nums[m]:
+##             return nums[m]
+##         elif t < nums[m]:
+##             res = m
+##             en = m - 1
+##         else:
+##             st = m + 1
+    
+##     return nums[res] if res != -1 else -1
+
+## print(ceilValue([1,2,3,4,8,10,12,19], 5))
+## print(ceilValue([1,2,3,4,8,10,12,19], 9))
+## print(ceilValue([1,2,3,4,8,10,12,19], 19))
+## print(ceilValue([1,2,3,4,8,10,12,19], 219))
+## print(ceilValue([1,2,3,4,8,10,12,19], 0))
+
+## def floorVal(nums, t):
+##     st = 0
+##     en = len(nums)-1
+##     res = -1
+    
+##     while st <= en:
+##         m = st + (en-st)//2
+        
+##         if t == nums[m]:
+##             return nums[m]
+##         if t < nums[m]:
+##             en = m - 1
+##         else:
+##             res = m
+##             st = m + 1
+    
+##     return nums[res] if res != -1 else -1
+
+## print(floorVal([1,2,3,4,8,10,12,19], 5))
+## print(floorVal([1,2,3,4,8,10,12,19], 9))
+## print(floorVal([1,2,3,4,8,10,12,19], 19))
+## print(floorVal([1,2,3,4,8,10,12,19], 219))
+## print(floorVal([1,2,3,4,8,10,12,19], 0))
+
+
+## def binSrchNearSortArr(nums, t):
+##     st = 0
+##     en = len(nums)-1
+    
+##     while st <= en:
+##         m = st + (en-st)//2
+        
+##         if t == nums[m]:
+##             return m
+##         elif st <= m-1 and t == nums[m-1]:
+##             return m-1
+##         elif m+1 <= en and t == nums[m+1]:
+##             return m+1
+##         elif t < nums[m]:
+##             en = m - 1
+##         else:
+##             st = m + 1
+    
+##     return -1
+    
+## print(binSrchNearSortArr([10,20,30,50,40], 50))
+## print(binSrchNearSortArr([10,20,30,50,40], 60))
+## print(binSrchNearSortArr([10,20,30,50,40], 20))
+
 # helper fn-1
 def numTimesArrRotated(nums):
     l = len(nums)
