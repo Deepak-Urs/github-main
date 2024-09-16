@@ -1,3 +1,91 @@
+# def minDiffElement(arr, t):
+#     st = 0 
+#     en = len(arr)-1
+    
+#     while st <= en:
+#         m = st + (en-st)//2
+        
+#         if t == arr[m]:
+#             return t
+#         elif t < arr[m]:
+#             en = m - 1
+#         else:
+#             st = m + 1
+    
+#     if en >= 0 and st <= len(arr)-1:
+#         if abs(arr[en]-t) <= abs(arr[st]-t):
+#             return arr[en]
+#         else:
+#             return arr[st]
+#     else:
+#         if st <= 0:
+#             return arr[0]
+#         else:
+#             return arr[len(arr)-1]
+    
+# print(minDiffElement([1,3,8,10,15], 12))
+# print(minDiffElement([1,3,8,10,15], 10))
+# print(minDiffElement([1,3,8,10,15], 22))
+# print(minDiffElement([1,3,8,10,15], 0))
+
+# # def binSearchFirstOccurnace(nums, st, en, t):
+# #     res = -1
+    
+# #     while st <= en:
+# #         m = st + (en-st)//2
+        
+# #         if t == nums[m]:
+# #             res = m
+# #             en = m - 1
+# #         elif t < nums[m]:
+# #             en = m - 1
+# #         else:
+# #             st = m + 1
+    
+# #     return res
+    
+# # def findFirstOccuranceInSortedArray(nums,t):
+# #     st = 0
+# #     en = 1
+    
+# #     while nums[en] < t:
+# #         st = en
+# #         en = en*2
+    
+# #     return binSearchFirstOccurnace(nums, st, en, t)
+    
+# # print(findFirstOccuranceInSortedArray([0,0,0,1,1,1,1,1,1,1,1,1,1,1,1,1], 1))
+# # print(findFirstOccuranceInSortedArray([0,0,0,0,0,1,1,1,1,1,1,1,1,1,1,1], 1))
+# # print(findFirstOccuranceInSortedArray([0,0,0,0,0,1,1,1,1,1,1,1,1,1,1,1], 0))
+
+# # def binSearch(arr, st, en, t):
+# #     while st <= en:
+# #         m = st + (en-st)//2
+        
+# #         if t == arr[m]:
+# #             return m
+# #         elif t < arr[m]:
+# #             en = m - 1
+# #         else:
+# #             st = m + 1
+    
+# #     return -1
+
+# # # assume infinite size sorted array
+# # def searchInfSortedArr(nums, t):
+# #     st = 0
+# #     en = 1
+    
+# #     while t >= nums[en]:
+# #         st = en
+# #         en = en*2
+        
+    
+# #     return binSearch(nums, st, en, t)
+    
+# # print(searchInfSortedArr([1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17], 6))
+# # print(searchInfSortedArr([1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17], 16))
+
 #def findNextAlphabet(letters, t):
 #    st = 0
 #    en = len(letters)-1
