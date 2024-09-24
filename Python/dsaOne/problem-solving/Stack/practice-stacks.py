@@ -1,3 +1,179 @@
+# class minimumStackImproved:
+#     def __init__(self, data=[]) -> None:
+#         self.stk = data
+#         self.minStkVal = -1
+
+#     def push(self, val) -> None:
+#         if not len(self.stk):
+#             self.stk.append(val)
+#             self.minStkVal = val
+#         elif self.stk[-1] <= val:
+#             self.stk.append(val)
+#         elif self.stk[-1] > val:
+#             self.stk.append(2*val - self.minStkVal)
+#             self.minStkVal = val
+
+
+#     def pop(self) -> int:
+#         ans = -1
+#         if not len(self.stk):
+#             return -1
+#         elif self.stk[-1] >= self.minStkVal:
+#             ans = self.stk.pop(-1)
+#         elif self.stk[-1] < self.minStkVal:
+#             self.minStkVal = 2*self.minStkVal - self.stk[-1]
+#             self.stk.pop(-1)
+#             ans = self.minStkVal
+        
+#         return ans
+
+#     def getMin(self) -> int:
+#         if not len(self.stk):
+#             return -1
+#         else:
+#             return self.minStkVal
+    
+#     def getTop(self) -> int:
+#         ans = -1
+#         if not len(self.stk):
+#             return -1
+#         elif self.stk[-1] >= self.minStkVal:
+#             ans = self.stk[-1]
+#         elif self.stk[-1] < self.minStkVal:
+#             ans = 2*self.minStkVal - self.stk[-1]
+        
+#         return ans
+
+#     def printStacks(self) -> None:
+#         print('stk -->', self.stk)
+
+
+# mS = minimumStackImproved()
+# # mS.printStacks()
+
+# mS.push(18)
+# # mS.printStacks()
+
+# mS.push(19)
+# mS.printStacks()
+# print('minStk value', mS.getMin())
+
+# mS.push(29)
+# # mS.printStacks()
+
+# mS.push(15)
+# mS.printStacks()
+# print('minStk value', mS.getMin())
+
+# mS.push(15)
+# mS.printStacks()
+
+# mS.pop()
+# # mS.printStacks()
+# print('minStk value', mS.getMin())
+
+# mS.pop()
+# # mS.printStacks()
+# print('minStk value', mS.getMin())
+
+
+
+
+# # class minStack:
+# #     def __init__(self, data=[]) -> None:
+# #         self.stk = data
+# #         self.minStk = []
+
+# #     def push(self, val) -> None:
+# #         self.stk.append(val)
+
+# #         if not len(self.minStk) or self.minStk[-1] >= val:
+# #             self.minStk.append(val)
+        
+# #         # print()
+# #         return
+    
+# #     def pop(self) -> int:
+# #         if not len(self.stk):
+# #             return -1
+# #         ans = self.stk.pop(-1)
+
+# #         if ans == self.minStk[-1]:
+# #             self.minStk.pop(-1)
+        
+# #         return ans
+
+# #     def getMin(self) -> int:
+# #         if not len(self.minStk):
+# #             return -1
+# #         else:
+# #             return self.minStk[-1]
+    
+# #     def printStacks(self) -> None:
+# #         print('stk -->', self.stk)
+# #         print('minStk -->', self.minStk)
+
+# # mS = minStack()
+# # # mS.printStacks()
+
+# # mS.push(18)
+# # # mS.printStacks()
+
+# # mS.push(19)
+# # mS.printStacks()
+# # print('minStk value', mS.getMin())
+
+# # mS.push(29)
+# # # mS.printStacks()
+
+# # mS.push(15)
+# # mS.printStacks()
+# # print('minStk value', mS.getMin())
+
+# # mS.push(15)
+# # mS.printStacks()
+
+# # mS.pop()
+# # # mS.printStacks()
+# # print('minStk value', mS.getMin())
+
+# # mS.pop()
+# # # mS.printStacks()
+# # print('minStk value', mS.getMin())
+
+
+
+# # # def rainWaterTrapping(nums):
+# # #     l = len(nums)
+# # #     mxL = [0 for _ in range(l)]
+# # #     mxR = [0 for _ in range(l)]
+# # #     mL = nums[0]
+# # #     mR = nums[-1]
+    
+# # #     for i in range(l):
+# # #         mxL[i] = max(mL, nums[i])
+# # #         if mxL[i] > mL:
+# # #             mL = mxL[i]
+# # #     print('mxL', mxL)
+
+# # #     for j in range(l):
+# # #         mxR[j] = max(mR, nums[j])
+# # #         if mxR[j] > mL:
+# # #             mL = mxR[j]
+# # #     print('mxR', mxR)
+    
+# # #     res = []
+# # #     for k in range(l):
+# # #         res.append(min(mxL[k], mxR[k]) - nums[k])
+    
+# # #     return sum(res)
+
+# # # print(rainWaterTrapping([3,0,0,2,0,4]))
+
+
+    
+
+
 # def NSL(nums):
 #     stk = []
 #     res = []
