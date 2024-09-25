@@ -36,7 +36,7 @@ def inOrderTraversal(rootNode): # O(n), O(n)
     print(rootNode.data)
     inOrderTraversal(rootNode.rightC)
 
-def postOrderTraversal(rootNode):
+def postOrderTraversal(rootNode): # O(n), O(n)
     if not rootNode:
         return
     postOrderTraversal(rootNode.leftC)
