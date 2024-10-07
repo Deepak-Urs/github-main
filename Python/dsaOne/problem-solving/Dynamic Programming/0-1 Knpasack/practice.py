@@ -1,4 +1,49 @@
-def zokp_subset_sum(arr, sm):
+#class SS:
+#    def __init__(self, arr=[]) -> None:
+#        self.arr = arr
+    
+#    def subset_sum(self, arr, sm):
+#        r = len(arr)+1
+#        c = sm+1
+
+#        T = [[] for _ in range(r)]
+#        for ix in range(r):
+#            for jx in range(c):
+#                if ix == 0:
+#                    T[ix].append(False)
+#                elif jx == 0:
+#                    T[ix].append(True)
+#                else:
+#                    T[ix].append(None)
+#        # print(T)
+        
+#        for i in range(r):
+#            for j in range(c):
+#                if arr[i-1] <= j:
+#                    T[i][j] = T[i-1][j-arr[i-1]] or T[i-1][j]
+#                elif arr[i-1] > j:
+#                    T[i][j] = T[i-1][j]
+        
+#        return T[i][j]
+
+
+#    def equal_sum_partition(self):
+#        sm = sum(self.arr)
+#        if sm % 2 != 0:
+#            return False
+#        return self.subset_sum(self.arr, sm//2)
+
+
+## ESS = SS([1,5,11,5])
+#ESS = SS([2,5,7,6,10])
+#print(ESS.equal_sum_partition())
+
+
+    
+
+
+
+#def zokp_subset_sum(arr, sm):
 #     # initialization
 #     r = len(arr)+1
 #     c = sm+1
