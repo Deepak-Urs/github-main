@@ -1,3 +1,89 @@
+#def subset_sum(arr, rng):
+#     r = len(arr)+1
+#     c = rng+1
+#     T = [[] for _ in range(r)]
+
+#     for ix in range(r):
+#         for jx in range(c):
+#             if ix == 0 and jx == 0:
+#                 T[ix].append(True)
+#             elif ix == 0:
+#                 T[ix].append(False)
+#             elif jx == 0:
+#                 T[ix].append(True)
+#             else:
+#                 T[ix].append(None)
+
+    
+#     for i in range(1, r):
+#         for j in range(1, c):
+#             if arr[i-1] <= j:
+#                 T[i][j] = T[i-1][j-arr[i-1]] or T[i-1][j]
+#             elif arr[i-1] > j:
+#                 T[i][j] = T[i-1][j]
+    
+#     return T
+
+# def zokp_min_difference_subset_sum(nums):
+#     rng = sum(nums)
+#     res = subset_sum(nums, rng)
+
+#     subset_sum_range = []
+#     for jx in range(len(res[0])//2):
+#         if jx == True:
+#             subset_sum_range.append(jx)
+    
+#     mn = float('inf')
+#     for i in subset_sum_range:
+#         mn = min(mn, rng-(2*i))
+    
+#     return mn
+
+
+
+# print(zokp_min_difference_subset_sum([1,2,7])) 
+
+# # print(zokp_min_difference_subset_sum([1,2,3,5,6,8,10], 11)) 
+
+
+
+
+
+
+# # def zokp_count_subset_sum(arr, sm):
+# #     r = len(arr)+1
+# #     c = sm+1
+# #     T = [[] for _ in range(r)]
+
+# #     for ix in range(r):
+# #         for jx in range(c):
+# #             if ix == 0 and jx == 0:
+# #                 T[ix].append(1)
+# #             elif ix == 0:
+# #                 T[ix].append(0)
+# #             elif jx == 0:
+# #                 T[ix].append(1)
+# #             else:
+# #                 T[ix].append(None)
+
+    
+# #     for i in range(1, r):
+# #         for j in range(1, c):
+# #             if arr[i-1] <= j:
+# #                 T[i][j] = T[i-1][j-arr[i-1]] + T[i-1][j]
+# #             elif arr[i-1] > j:
+# #                 T[i][j] = T[i-1][j]
+    
+# #     return T[i][j]
+
+# # print(zokp_count_subset_sum([2,3,5,6,8,10], 10)) 
+# # # 2,3,5; 2,8; 10
+
+# # print(zokp_count_subset_sum([1,2,3,5,6,8,10], 11)) 
+# # # 1,2,3,5; 2,3,6; 3,8; 1,10; 5,6; 2,3,6
+
+
+
 #class SS:
 #    def __init__(self, arr=[]) -> None:
 #        self.arr = arr
