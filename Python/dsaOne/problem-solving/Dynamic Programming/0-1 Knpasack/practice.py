@@ -1,3 +1,35 @@
+#def subset_sum(nums, ans):
+#    r = len(nums)+1
+#    c = ans+1
+
+#    T = [[] for _ in range(r)]
+#    for ix in range(r):
+#        for jx in range(c):
+#            if ix == 0 and jx == 0:
+#                T[ix].append(1)
+#            elif ix == 0:
+#                T[ix].append(0)
+#            elif jx == 0:
+#                T[ix].append(1)
+#            else:
+#                T[ix].append(None)
+#    print(T)
+    
+#    for i in range(1, r):
+#        for j in range(1, c):
+#            if nums[i-1] <= ans:
+#                T[i][j] = T[i-1][j-nums[i-1]] + T[i-1][j]
+#            elif nums[i-1] > ans:
+#                T[i][j] = T[i-1][j]
+    
+#    return T[i][j]
+
+#def target_sum(nums, sm):
+#    return subset_sum(nums, sm)
+
+#print(target_sum([1,1,2,3], 3))
+
+
 #def count_subset_sum_diff(nums, sm):
 #     #  initialization
 #     r = len(nums)+1
