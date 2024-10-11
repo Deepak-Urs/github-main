@@ -1,3 +1,40 @@
+#def count_subset_sum_diff(nums, sm):
+#     #  initialization
+#     r = len(nums)+1
+#     c = sm+1
+#     T = [[] for _ in range(r)]
+#     for ix in range(r):
+#         for jx in range(c):
+#             if ix == 0 and jx == 0:
+#                 T[ix].append(1)
+#             elif ix == 0:
+#                 T[ix].append(0)
+#             elif jx == 0:
+#                 T[ix].append(1)
+#             else:
+#                 T[ix].append(None)
+
+#     #  computation
+#     for i in range(1, r):
+#         for j in range(1, c):
+#             if nums[i-1] <= sm:
+#                 T[i][j] = T[i-1][j-nums[i-1]] + T[i-1][j]
+#             elif nums[i-1] > sm:
+#                 T[i][j] = T[i-1][j]
+    
+#     return T[i][j]
+
+
+
+# def count_num_subset_diff(nums, diff):
+#     sm = (diff + len(nums)) // 2
+#     return count_subset_sum_diff(nums, sm)
+
+# print(count_num_subset_diff([1,1,2,3], 1)) #2
+# print(count_num_subset_diff([1,2,3,4,5], 1)) #2
+
+
+
 #def subset_sum(arr, rng):
 #     r = len(arr)+1
 #     c = rng+1
