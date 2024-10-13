@@ -1,3 +1,74 @@
+# def minNumCoins(coins, change):
+#     r = len(coins)+1
+#     c = change+1
+
+#     T = [[] for _ in range(r)]
+#     for ix in range(r):
+#         for jx in range(c):
+#             if ix == 0 and jx == 0:
+#                 T[ix].append(float('inf')-1)
+#             elif ix == 0:
+#                 T[ix].append(float('inf')-1)
+#             elif jx == 0:
+#                 T[ix].append(0)
+#             else:
+#                 T[ix].append(None)
+    
+#     for sj in range(1, len(T[1])):
+#         if sj % coins[0] == 0:
+#             T[1][sj] = int(sj//coins[0])
+#         else:
+#             T[1][sj] = float('inf')
+
+#     for i in range(1, r):
+#         for j in range(1, c):
+#             if coins[i-1] <= j:
+#                 T[i][j] = min(T[i-1][j], 1+T[i][j-coins[i-1]])
+#             elif coins[i-1] > j:
+#                 T[i][j] = T[i-1][j]
+    
+#     return T[i][j]
+
+# print(minNumCoins([1,2,3,4], 5))
+
+    
+
+
+
+            
+
+
+# # def coinChangeUB(coins, change):
+# #     r = len(coins)+1
+# #     c = change+1
+
+# #     T = [[] for _ in range(r)]
+# #     for ix in range(r):
+# #         for jx in range(c):
+# #             if ix == 0 and jx == 0:
+# #                 T[ix].append(1)
+# #             elif ix == 0:
+# #                 T[ix].append(0)
+# #             elif jx == 0:
+# #                 T[ix].append(1)
+# #             else:
+# #                 T[ix].append(None)
+    
+# #     for i in range(1, r):
+# #         for j in range(1, c):
+# #             if coins[i-1] <= j:
+# #                 T[i][j] = T[i-1][j] + T[i][j-coins[i-1]]
+# #             elif coins[i-1] > j:
+# #                 T[i][j] = T[i-1][j]
+
+# #     return T[i][j]
+
+# # print(coinChangeUB([1,2,3], 5)) 
+# # print(coinChangeUB([1,2,3], 6)) 
+
+
+
+
 # def rodCutting(Ln, Pr, L, n):
 #     r = n+1
 #     c = len(Ln)+1
