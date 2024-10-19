@@ -1,3 +1,62 @@
+# def minInsDelToMakeStrAtoB(X, Y):
+#     m = len(X)
+#     n = len(Y)
+
+#     # init
+#     T = [[] for _ in range(m+1)]
+#     for ix in range(m+1):
+#         for jx in range(n+1):
+#             if ix == 0 or jx == 0:
+#                 T[ix].append(0)
+#             else:
+#                 T[ix].append(None)
+    
+#     # computation
+#     for i in range(1, m+1):
+#         for j in range(1, n+1):
+#             if X[i-1] == Y[j-1]:
+#                 T[i][j] = 1 + T[i-1][j-1]
+#             elif X[i-1] != Y[j-1]:
+#                 T[i][j] = max(T[i-1][j], T[i][j-1])
+    
+#     return m+n-(2*T[i][j])
+
+# print(minInsDelToMakeStrAtoB('heap', 'pea'))
+# print(minInsDelToMakeStrAtoB('get', 'eta'))
+
+
+
+# def shortestSuperSequence(A, B):
+#     m = len(A)+1
+#     n = len(B)+1
+
+#     # initialization
+#     T = [[] for _ in range(m)]
+#     for ix in range(m):
+#         for jx in range(n):
+#             if ix == 0 or jx == 0:
+#                 T[ix].append(0)
+#             else:
+#                 T[ix].append(None)
+    
+#     # computation
+#     for i in range(1, m):
+#         for j in range(1, n):
+#             if A[i-1] == B[j-1]:
+#                 T[i][j] = 1 + T[i-1][j-1]
+#             elif A[i-1] != B[j-1]:
+#                 T[i][j] = max(T[i-1][j], T[i][j-1])
+    
+#     return m+n-T[i][j]-2
+
+# print(shortestSuperSequence('AGGTAB', 'GXTXAYB'))
+# print(shortestSuperSequence('GEEK', 'EKE'))
+
+
+
+
+
+
 # def printLCS(X, Y, m, n):
 #     r = m + 1
 #     c = n + 1
