@@ -1,24 +1,35 @@
-class Test {
-        int age;
+class BankAcc {
+    double balance;
+    String accType;
 
-        public void assignAge(int num) {
-            age = num;
-        }
+    public BankAcc() {
+        this.balance = 0;
+        this.accType = "Savings";
+    }
 
-        public int sum(int a, int b) {
-            return a + b;
-        }
+    public BankAcc(double __balance, String __accType) {
+        this.balance = __balance;
+        this.accType = __accType;
+    }
+
+    public void printBalance() {
+        System.out.println(this.balance);
+    }
+
+    public void printAccountType() {
+        System.out.println(this.accType);
+    }
+
 }
 
 public class Basics {
     public static void main(String[] args) {
-        Test t1 = new Test();
-        t1.assignAge(10);
+        BankAcc t1 = new BankAcc();
+        t1.printBalance();
+        t1.printAccountType();
 
-        Test t2 = new Test();
-        t2.assignAge(15);
-
-        System.out.println(t1.sum(10, 20));
-        System.out.println(t2.sum(15, 20));
+        BankAcc t2 = new BankAcc(100.0, "Checking");
+        t2.printBalance();
+        t2.printAccountType();
     }
 }
