@@ -4,6 +4,10 @@ class Test {
         public void assignAge(int num) {
             age = num;
         }
+
+        public int sum(int a, int b) {
+            return a + b;
+        }
 }
 
 public class Basics {
@@ -14,7 +18,7 @@ public class Basics {
         Test t2 = new Test();
         t2.assignAge(15);
 
-        System.out.println(t1.age);
-        System.out.println(t2.age);
+        System.out.println(t1.sum(10, 20));
+        System.out.println(t2.sum(15, 20));
     }
 }
